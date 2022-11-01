@@ -15,12 +15,12 @@ from dns.huawei import HuaWeiApi
 KEY = os.environ["KEY"]  #"o1zrmHAF"
 #CM:移动 CU:联通 CT:电信 AB:境外 DEF:默认
 #修改需要更改的dnspod域名和子域名
-DOMAINS = json.loads(os.environ["DOMAINS"])  #{"hostmonit.com": {"@": ["CM","CU","CT"], "shop": ["CM", "CU", "CT"], "stock": ["CM","CU","CT"]},"4096.me": {"@": ["CM","CU","CT"], "vv": ["CM","CU","CT"]}}
+DOMAINS = json.loads(os.environ["DOMAINS"])  #{"da.com": {"@": ["CM","CU","CT"], "www": ["CM", "CU", "CT"]}}
 #腾讯云后台获取 https://console.cloud.tencent.com/cam/capi
 SECRETID = os.environ["SECRETID"]    #'AKIDV**********Hfo8CzfjgN'
 SECRETKEY = os.environ["SECRETKEY"]   #'ZrVs*************gqjOp1zVl'
 #默认为普通版本 不用修改
-AFFECT_NUM = 2
+AFFECT_NUM = 4
 #DNS服务商 如果使用DNSPod改为1 如果使用阿里云解析改成2  如果使用华为云解析改成3
 DNS_SERVER = 1
 #如果试用华为云解析 需要从API凭证-项目列表中获取
@@ -28,7 +28,7 @@ REGION_HW = 'cn-east-3'
 #如果使用阿里云解析 REGION出现错误再修改 默认不需要修改 https://help.aliyun.com/document_detail/198326.html
 REGION_ALI = 'cn-hongkong'
 #解析生效时间，默认为600秒 如果不是DNS付费版用户 不要修改!!!
-TTL = 600
+TTL = 60
 #v4为筛选出IPv4的IP  v6为筛选出IPv6的IP
 TYPE = 'v4'
 
